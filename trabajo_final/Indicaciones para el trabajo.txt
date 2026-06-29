@@ -1,4 +1,5 @@
 Indicaciones para el trabajo final, curso Analisis de sistemas de info:
+Visión del Negocio → Actores → Reglas del Negocio → Casos de Uso → SRS → Arquitectura 4+1 → Prototipo
 sistema de especificacion
 
 añadir las reglas de negocio separadas

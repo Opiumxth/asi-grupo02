@@ -1,3 +1,4 @@
+# 02_sistemas_informacion
 ## Preguntas de recuperación
 
 1. ¿Por qué la "crisis del software" fue un punto de inflexión en la industria? ¿Qué síntomas de esa crisis siguen siendo relevantes hoy en día?
@@ -20,25 +21,37 @@ No, un sistema de informacion, hace lo que dice su nombre, procesa informacion, 
 
 La iteracion implica una mejora y agregacion de funcionalidades, por esos los requisitos en cada iteracion van aumentanto y mejorando
 
-
 6. ¿Qué ventajas ofrece el modelo en espiral respecto al modelo cascada para proyectos con alto riesgo técnico?
 
 Pues el modelo espiral gira en torno o tiene como particularidad que le pone enfasis a la gestion de riesgo como parte del flujo de desarrollo del proyecto, en cambio el modelo de cascada no implementa esto
 
+# 03_rup
+
+## Preguntas de recuperación
+
+1. ¿Por qué RUP afirma que la fase de Inicio NO es "la fase de requisitos"? ¿Qué implica esto para la distribución del trabajo en un proyecto?
+
+En RUP se plantean 4 fases que son inicio, elaboracion, construccion y transicion. Inicio, no necesariamente tiene que ser la fase de requisitos ya que, si bien aqui se plantean requisitos, tambien se plantean en las otras fases, es decir puede presentarse que se plantean nuevos requisitos en la elaboracion o construccion, es decir que esto implica que las fases no son excluyentes o absolutas
+
+2. Explica cómo las 6 mejores prácticas de RUP se relacionan entre sí. ¿Qué ocurriría si se implementara solo una de ellas sin las demás?
+
+Tenemos modelado visual, arquitectura de componentes, desarrollo iterativo, gestion de requisitos, verificacion continua y gestion de cambios, todas estas se complementan ya que por ejemplo, sin el desarrollo iterativo no se podrian gestionar nuevos cambios porque no habria iteracion alguna, y asi, cada fase depende de la anterior y determina la siguiente. Si se implementa el ciclo sin una de ellas este se romperia por lo mismo mencionado anteriormente
+
+3. ¿Qué diferencia hay entre un flujo de ingeniería y un flujo de soporte en RUP? ¿Por qué los flujos de soporte son necesarios?
+
+Se tiene que el flujo de ingenieria conformado por 6 flujos es el "principal" por asi decirlo, por lo mismo que en este es donde se hace el desarrollo del sistema, pero por otro lado, el flujo de soporte se encarga de mantener y asegurar el correcto desarrollo del sistema fuera de este, con la gestion de cambios, el control de versiones o la gestion del proyecto en general, puntos que estan fuera del flujo principal de desarrollo pero son fundamentales para la correcta ejecucion de este
+
+4. Si un "worker" en RUP no es una persona física, ¿qué es realmente? ¿Cómo afecta esto a la organización de un equipo de desarrollo?
+
 ---
 
-## 7. Preguntas de Autoevaluación
+5. ¿Por qué RUP es tanto iterativo como incremental? ¿Qué aporta cada uno de estos conceptos a la gestión del proyecto?
 
-1. ¿Cuáles son las diferencias fundamentales entre un modelo secuencial y uno iterativo?
+Iterativo se refiere a que este siempre sigue un ciclo que va repitiendose una y otra vez, por otro lado el termino incremental indica que cada iteracion tiene que traer con agregar nuevas funcionalidades si o si
 
+6. ¿En qué se diferencia RUP de metodologías ágiles como Scrum? ¿Cuándo elegirías uno u otro?
 
+En lo que yo me fijaria al elegir alguna metodologia es en la naturaleza del proyecto, porque RUP está definido como una metodologia iterativa e incremental, pero no agil, porque este cae en la formalidad de la documentacion, lo cual es bueno para un equipo y proyecto grande, no lo es para un sistema o proyecto que requiera un rapido desarrollo. Por otro lado Scrum es ideal para equipos pequeños y para software que requiera una entrega continua determinada por periodos cortos de tiempo (semanas)
 
-2. ¿Qué problemas de la "crisis del software" resuelve el enfoque iterativo?
+# 04_modelado_negocio
 
-
-
-3. ¿Por qué un proceso de software define roles, actividades Y artefactos?
-
-
-
-4. ¿Un sistema de información es lo mismo que software? Justifica.

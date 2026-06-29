@@ -1,0 +1,879 @@
+Indicaciones para el trabajo final, curso Analisis de sistemas de info:
+sistema de especificacion
+
+añadir las reglas de negocio separadas
+
+especificaciones de caso de uso
+
+sistema de requerimientos (probablemente el màs largo)
+
+
+presentacion
+docuemtnos completos + documento de arquitectura 4+1
+un soloa rchivo rational
+presentar el prototipo del sistema (botones, etc)
+todas las pantallas que sean necesarias
+
+en la exposicion:
+-explicar el negocio
+-cual es la propuesta
+-funcionalidades del sistema
+-mostrar toda la secuencia (pantallas con botones funcionales)
+
+puntos a evaluar:
+presentacion
+profundidad
+cumplimiento
+relevancia
+
+Unico documento completo hasta ahora es el de "Vision de Negocio - Grupo 02".
+Contenido:
+"""
+# Proyecto: DeliverySuite
+
+## Versión: 1.0.
+
+Identificador del documento: DS-VN-
+1
+
+
+DeliverySuite Versión: 1.0.
+**Historial de Revisiones
+Versión Fecha Autor Descripción**
+1.0 21/04/2026 Flores Hoyos, Mathias Primera versión, desarrollo de la
+visión del negocio
+1.0 21/04/2026 Principe Caballa, Aida Primera versión, desarrollo de la
+visión del negocio
+1.0 21/04/2026 Ochoa Torres, Yoant
+Alnor
+Primera versión, desarrollo de la
+visión del negocio
+
+
+## Índice de Contenido
+
+   - DeliverySuite Versión: 1.0.
+- 1. Introducción.................................................................................................................................
+      - 1.1. Objetivos.............................................................................................................................
+      - 1.2. Alcance...............................................................................................................................
+      - 1.3. Definiciones, Acrónimos y Abreviaciones.........................................................................
+      - 1.4. Visión General....................................................................................................................
+      - 1.5. Documentos Relacionados..................................................................................................
+- 2. Postura..........................................................................................................................................
+      - 2.1. Oportunidad de Negocio.....................................................................................................
+      - 2.2. El Problema.........................................................................................................................
+      - 2.3. Posición del Negocio..........................................................................................................
+- 3. Descripción de los Involucrados..................................................................................................
+      - 3.1. Demografía del Mercado....................................................................................................
+      - 3.2. Perfiles de Stakeholders y Usuarios....................................................................................
+      - 3.3. Alternativas y Competencias............................................................................................
+- 4. Bibliografía................................................................................................................................
+
+
+### DeliverySuite Versión: 1.0.
+
+**1. Introducción**
+    En el contexto comercial actual, contar con un servicio de entrega eficiente se ha vuelto
+indispensable para el crecimiento de cualquier empresa. No obstante, existe una barrera
+importante: el acceso a tecnología logística suele ser costoso y complejo, lo que deja a muchas
+empresas en desventaja frente a las grandes plataformas. Esta situación no solo limita su
+capacidad de venta, sino que genera dificultades operativas que afectan la experiencia del cliente
+final.
+Este documento presenta una solución diseñada para cerrar esa brecha. Se trata de un
+sistema de gestión de pedidos de bajo costo, llamado DeliverySuite, enfocado en centralizar y
+simplificar toda la cadena de delivery. El objetivo principal es ofrecer a las empresas una
+herramienta profesional que les permita organizar sus entregas con la misma eficiencia que una
+gran corporación, pero manteniendo la rentabilidad de su negocio.
+A través de la integración de clientes, establecimientos y repartidores en una sola
+plataforma, el sistema automatiza el flujo de trabajo y reduce los errores manuales. De esta
+manera, el servicio no solo resuelve los problemas logísticos actuales, sino que se convierte en
+un aliado estratégico para que las empresas maximicen su alcance y compitan con éxito en el
+mercado moderno.
+**1.1. Objetivos**
+El objetivo de este documento es definir la visión del sistema de
+información que permitirá optimizar el proceso de gestión de pedidos de
+diferentes empresas, identificando el problema actual, los involucrados y la
+oportunidad de negocio.
+El sistema estará orientado a apoyar las siguientes funciones principales:
+● Gestión del registro y seguimiento de pedidos.
+
+
+DeliverySuite Versión: 1.0.
+● Control de estados del pedido a lo largo del proceso.
+● Coordinación entre clientes, tiendas y repartidores.
+● Diferentes tipos de asignaciones de pedidos a repartidores.
+● Gestión de incidencias como cancelaciones o retrasos.
+Estas funciones se presentan a nivel general, sin detallar aspectos técnicos
+de implementación.
+**1.2. Alcance**
+El proyecto de desarrollo de software abarca la implementación de
+procesos relacionados con la gestión de pedidos, el seguimiento de entregas en
+tiempo real, la asignación de repartidores, el control de estados, la administración
+de incidencias y la coordinación entre tiendas y establecimientos afiliados. Esto
+permitirá a las empresas brindar un servicio de delivery más eficiente a sus
+clientes finales y mejorar la rentabilidad de su operación logística mediante
+DeliverySuite.
+**1.3. Definiciones, Acrónimos y Abreviaciones**
+
+- **Order (Pedido):** Solicitud de compra realizada por un cliente.
+- **Store (Tienda):** Establecimiento afiliado que ofrece productos.
+- **Driver (Repartidor):** Persona encargada de la entrega del pedido.
+- **Dispatcher (Despachador):** Personal de la tienda que gestiona pedidos.
+- **Order state (Estado del pedido):** Fase en la que se encuentra un pedido
+    (pendiente, en preparación, entregado, etc.).
+
+
+DeliverySuite Versión: 1.0.
+**1.4. Visión General**
+El documento se organiza de la siguiente manera:
+● **Sección 1:** Introducción general del documento.
+● **Sección 2:** Postura del negocio, incluyendo problema y oportunidad.
+● **Sección 3:** Descripción de los involucrados en el proceso.
+**1.5. Documentos Relacionados
+Título Fecha Organización Identificador**
+Documento de Presentación
+DeliverySuite
+2026 DeliverySuite DOC-
+Material de clase - Modelo de
+Negocio
+2026 Análisis de Sistemas
+de Información
+
+#### DOC-
+
+**2. Postura**
+    **2.1. Oportunidad de Negocio**
+       El gran crecimiento de las ventas por internet y el servicio de delivery ha
+hecho que los negocios locales necesiten mejores herramientas para organizar sus
+pedidos. Los estudios demuestran que la entrega de "última milla" (el viaje final
+del pedido desde el local hasta la casa del cliente) es fundamental para tener éxito,
+pero también es una etapa muy complicada, requiere mucho esfuerzo humano y es
+carísima, llegando a representar hasta el 53 % de todos los costos de envío. Como
+el personal y los recursos son limitados, es vital que los negocios tradicionales
+que se están modernizando usen herramientas tecnológicas y estrategias
+
+
+DeliverySuite Versión: 1.0.
+operativas que se adapten a su realidad para poder sacar las máximas ganancias
+(Lu et al., 2023).
+Muchas empresas de delivery carecen de herramientas adecuadas para
+organizar sus operaciones, lo que representa una oportunidad para implementar
+soluciones que mejoren la eficiencia, aumenten las ventas y disminuyan costos.
+**2.2. El Problema
+Problema** La gestión ineficiente y manual del proceso de pedidos entre
+clientes, tiendas y repartidores.
+**Afectados** Clientes finales, establecimientos afiliados (restaurantes y
+tiendas), dueños de empresas de delivery, repartidores
+(motorizados) y el personal de soporte operativo.
+**Impacto** Esta ineficiencia genera retrasos en la entrega de pedidos,
+errores en la gestión, alta insatisfacción del cliente y pérdida de
+ventas. Además, sitúa a las empresas locales en una profunda
+desventaja tecnológica frente a las grandes corporaciones
+transnacionales, limitando su capacidad de crecimiento y
+escalabilidad.
+**Solución Adecuada** Una solución exitosa consiste en la implementación de un
+ecosistema tecnológico que permita:
+● Automatizar el flujo de pedidos de principio a fin.
+● Mejorar la coordinación y comunicación en tiempo real
+entre todos los actores.
+
+
+DeliverySuite Versión: 1.0.
+● Permitir el seguimiento por GPS en tiempo real.
+● Reducir drásticamente los errores operativos y la carga
+administrativa.
+**2.3. Posición del Negocio
+Para** Empresas que ofrecen servicios de delivery local.
+**Quienes** Necesitan una plataforma tecnológica robusta que les ayude a
+competir y modernizarse.
+**DeliverySuite** Es un ecosistema de aplicaciones y centralización de repartidores
+de marca blanca.
+**Que** Permite conectar a clientes, tiendas y motorizados, contemplando
+todas las necesidades operativas requeridas por el cliente
+empresarial.
+**Diferencia** Frente a los desarrolladores de apps tradicionales, nuestra
+solución reduce drásticamente los costos de implementación
+sacrificando únicamente la personalización en cuanto a lo visual.
+A cambio, ofrece un sistema económico, escalable y distribuible
+que está preparado para operar de inmediato.
+**Este negocio** Busca proponer este ecosistema como la solución integral que
+captura todos los casos de uso logísticos del mercado, logrando
+
+
+```
+DeliverySuite Versión: 1.0.
+el propósito de ser adaptable a casi cualquier empresa de
+delivery.
+```
+**3. Descripción de los Involucrados**
+    **3.1. Demografía del Mercado**
+       El mercado objetivo está conformado por empresas de delivery que buscan
+mejorar la eficiencia de sus operaciones y competir en un entorno cada vez más
+digitalizado.
+Muchas de estas empresas de delivery, especialmente las que son de menor escala,
+enfrentan limitaciones por implementar soluciones que les permitan gestionar sus pedidos
+de manera organizada, lo que impacta directamente en la calidad de su servicio.
+El crecimiento del comercio electrónico y la demanda misma de entregas rápidas
+ha incrementado la necesidad de que estas empresas cuenten con procesos de gestión de
+pedidos eficientes, rápidos y económicos, donde la coordinación entre los diferentes
+actores es crucial para la realización correcta de su servicio.
+Teniendo en cuenta este contexto, surge la oportunidad de ofrecer una solución
+que permita a las empresas optimizar sus operaciones sin incurrir en altos costos,
+facilitando la gestión integral del proceso de pedidos.
+    **3.2. Perfiles de Stakeholders y Usuarios**
+       A continuación, se describen los principales involucrados en el proceso de negocio,
+considerando su rol, responsabilidades y expectativas respecto al sistema.
+**Cliente (Usuario Final)**
+
+
+DeliverySuite Versión: 1.0.
+**Campo Descripción
+Representante** Cliente de la plataforma
+**Descripción** Persona que realiza pedidos a través del
+sistema
+**Tipo** Usuario final
+**Responsabilidades** Realizar solicitudes de pedido y proporcionar
+información de entrega
+**Criterio de éxito** Recibir el pedido de manera correcta, en el
+menor tiempo posible y sin errores
+**Participación** Uso directo del sistema durante todo el
+proceso de pedido
+**Entregables** Confirmación del pedido, seguimiento del
+estado
+**Comentarios** Puede presentar insatisfacción ante retrasos,
+falta de información o errores en la entrega
+**Empresa de delivery (Negocio Afiliado)
+Campo Descripción**
+
+
+DeliverySuite Versión: 1.0.
+**Representante** Empresa afiliada a la plataforma
+**Descripción** Negocio que ofrece servicio de delivery
+**Tipo** Usuario operativo
+**Responsabilidades** Gestionar pedidos recibidos, preparar
+productos y coordinar su despacho
+**Criterio de éxito** Incrementar ventas, reducir errores y mejorar
+tiempos de atención
+**Participación** Operación continua dentro del flujo de
+pedidos
+**Entregables** Confirmación de disponibilidad y despacho
+del pedido
+**Comentarios** Puede verse afectado por desorganización,
+falta de visibilidad del proceso y errores en la
+gestión
+**Personal de soporte
+Campo Descripción
+Representante** Área de atención al cliente
+
+
+DeliverySuite Versión: 1.0.
+**Descripción** Encargado de gestionar incidencias, reclamos
+y soporte operativo
+**Tipo** Usuario interno
+**Responsabilidades** Resolver problemas relacionados con pedidos,
+entregas o usuarios
+**Criterio de éxito** Resolver incidencias de manera rápida,
+eficiente y satisfactoria
+**Participación** Intervención en situaciones excepcionales o
+de fallo
+**Entregables** Resolución de incidencias, atención de
+reclamos
+**Comentarios** Requiere información clara y en tiempo real
+para actuar eficientemente
+**Administración (Dirección del Negocio)
+Campo Descripción
+Representante** Dirección o gerencia del negocio
+**Descripción** Encargados de la toma de decisiones
+
+
+DeliverySuite Versión: 1.0.
+estratégicas y supervisión del sistema
+**Tipo** Stakeholder estratégico
+**Responsabilidades** Supervisar el desempeño del sistema y la
+operación general del negocio
+**Criterio de éxito** Incrementar eficiencia operativa, rentabilidad
+y escalabilidad del servicio
+**Participación** Evaluación, supervisión y toma de decisiones
+**Entregables** Reportes, métricas de desempeño, indicadores
+de gestión
+**Comentarios** Requiere información consolidada y confiable
+para la toma de decisiones
+**Repartidor (Driver)
+Campo Descripción
+Representante** Repartidor afiliado a la empresa
+**Descripción** Persona encargada de realizar la entrega de
+los pedidos al cliente final
+**Tipo** Usuario operativo
+
+
+DeliverySuite Versión: 1.0.
+**Responsabilidades** Recoger pedidos, transportarlos y entregarlos
+en la dirección indicada
+**Criterio de éxito** Realizar entregas en el menor tiempo posible,
+sin errores y cumpliendo con las condiciones
+del pedido
+**Participación** Participa en la fase final del proceso de
+pedido (entrega)
+**Entregables** Confirmación de entrega del pedido
+**Comentarios** Puede verse afectado por información
+incompleta, mala asignación de pedidos o
+falta de coordinación
+**3.3. Alternativas y Competencias**
+Actualmente, las empresas de delivery cuentan con diversas alternativas para
+gestionar sus pedidos. Entre las principales se encuentran:
+● Uso de plataformas de delivery ya establecidas
+● Gestión manual mediante llamadas telefónicas
+● Uso de aplicaciones de mensajería como canal de coordinación
+Estas alternativas presentan limitaciones importantes, tales como:
+● Falta de control integral del proceso de pedidos
+
+
+DeliverySuite Versión: 1.0.
+● Baja eficiencia en la coordinación entre clientes, tiendas y repartidores
+● Escasa visibilidad del estado del pedido en tiempo real
+● Alta probabilidad de errores operativos
+● Dependencia de soluciones externas con costos elevados o poca flexibilidad
+Frente a estas alternativas, la propuesta del sistema se diferencia al ofrecer una
+plataforma centralizada que permite:
+● Integrar a todos los actores del proceso en un solo entorno
+● Mejorar la coordinación y trazabilidad de los pedidos
+● Optimizar los tiempos de atención y entrega
+● Reducir errores mediante la automatización del flujo de trabajo
+● Adaptarse a las necesidades específicas de cada empresa de delivery
+
+**4. Bibliografía**
+    Lu, Z., Cui, R., Sun, T., & Wu, L. (2023). _The value of last-mile delivery in online
+retail_. SSRN. https://papers.ssrn.com/sol3/papers.cfm?abstract_id=
+"""
+Fin del contenido del documento "Vision de Negocio - Grupo 02".
+
+Documentos a completar
+Archivo "Sistema Esp Actores de CUS alto nivel":
+# <Nombre de la Compañía>
+
+# <Nombre del Proyecto>
+
+# Actores del Sistema
+
+## Versión <1.0>
+
+[Note: The following template is provided for use with the Rational Unified Process. Text enclosed in square
+brackets and displayed in blue italics (style=InfoBlue) is included to provide guidance to the author and should
+be deleted before publishing the document. A paragraph entered following this style will automatically be set to
+normal (style=Body Text).]
+[To customize automatic fields in Microsoft Word (which display a gray background when selected), select
+File>Properties and replace the Title, Subject and Company fields with the appropriate information for this
+document. After closing the dialog, automatic fields may be updated throughout the document by selecting
+Edit>Select All (or Ctrl-A) and pressing F9, or simply click on the field and press F9. This must be done
+separately for Headers and Footers. Alt-F9 will toggle between displaying the field names and the field
+contents. See Word help for more information on working with fields.]
+
+
+Actores del Sistema Fecha: <dd/mmm/yy>
+<identificador del documento>
+
+# Historial de Revisiones
+
+**Fecha Versión Descripción Autor**
+<dd/mmm/yy> <x.x> <detalles> <nombre>
+
+
+Actores del Sistema Fecha: <dd/mmm/yy>
+<identificador del documento>
+
+# Tabla de Contenidos
+
+## 1. <Nombre del Actor del Sistema 1> 3
+
+## 2. <Nombre del Actor del Sistema 2> 3
+
+
+Actores del Sistema Fecha: <dd/mmm/yy>
+<identificador del documento>
+
+# Actores del Sistema
+
+## 1. <Nombre del Actor del Sistema 1>
+
+```
+[Breve descripción de rol representado en el sistema por el actor del sistema. Debe incluir las funciones
+principales que ayuden a comprender las responsabilidades del actor del sistema frente al sistema.]
+```
+## 2. <Nombre del Actor del Sistema 2>
+
+```
+[Breve descripción de rol representado en el sistema por el actor del sistema. Debe incluir las funciones
+principales que ayuden a comprender las responsabilidades del actor del sistema frente al sistema.]
+```
+
+
+Archivo "Negocio Reglas":
+# <Nombre de la Compañía>
+
+# <Nombre del Proyecto>
+
+# Reglas del Negocio
+
+## Versión <1.0>
+
+[Note: The following template is provided for use with the Rational Unified Process. Text enclosed in square
+brackets and displayed in blue italics (style=InfoBlue) is included to provide guidance to the author and should
+be deleted before publishing the document. A paragraph entered following this style will automatically be set to
+normal (style=Body Text).]
+[To customize automatic fields in Microsoft Word (which display a gray background when selected), select
+File>Properties and replace the Title, Subject and Company fields with the appropriate information for this
+document. After closing the dialog, automatic fields may be updated throughout the document by selecting
+Edit>Select All (or Ctrl-A) and pressing F9, or simply click on the field and press F9. This must be done
+separately for Headers and Footers. Alt-F9 will toggle between displaying the field names and the field
+contents. See Word help for more information on working with fields.]
+
+
+Reglas del Negocio Fecha: <dd/mmm/yy>
+<identificador del documento>
+
+# Historial de Revisiones
+
+**Fecha Versión Descripción Autor**
+<dd/mmm/yy> <x.x> <detalles> <nombre>
+
+
+Reglas del Negocio Fecha: <dd/mmm/yy>
+<identificador del documento>
+
+# Tabla de Contenidos
+
+## 1. <Regla del Negocio 1> 4
+
+## 2. <Regla del Negocio 2> 4
+
+
+Reglas del Negocio Fecha: <dd/mmm/yy>
+<identificador del documento>
+
+# Reglas del Negocio
+
+## 1. <Regla del Negocio 1>
+
+```
+[Definición de la regla del negocio 1]
+```
+## 2. <Regla del Negocio 2>
+
+```
+[Definición de la regla del negocio 1]
+```
+
+Archivo "Sistema Requerimientos del software":
+# <Nombre de la Compañía>
+
+# <Nombre del Proyecto>
+
+# Especificación de Requerimientos de Software
+
+## Versión <1.0>
+
+[Note: The following template is provided for use with the Rational Unified Process. Text enclosed in
+square brackets and displayed in blue italics (style=InfoBlue) is included to provide guidance to the author
+and should be deleted before publishing the document. A paragraph entered following this style will
+automatically be set to normal (style=Body Text).]
+[To customize automatic fields in Microsoft Word (which display a gray background when selected), select
+File>Properties and replace the Title, Subject and Company fields with the appropriate information for
+this document. After closing the dialog, automatic fields may be updated throughout the document by
+selecting Edit>Select All (or Ctrl-A) and pressing F9, or simply click on the field and press F9. This must
+be done separately for Headers and Footers. Alt-F9 will toggle between displaying the field names and
+the field contents. See Word help for more information on working with fields.]
+
+
+Especificación de Requerimientos de Software Date: <dd/mmm/yy>
+<Identificador del documento>
+
+# Historial de Versiones
+
+**Fecha Versión Descripción Autor**
+<dd/mmm/yy> <x.x> <detalles> <nombre>
+
+
+## Especificación de Requerimientos de Software Date: <dd/mmm/yy>
+
+<Identificador del documento>
+
+- 1. Funcionalidad Tabla de Contenidos
+   - 1.1 Asociados a los casos de uso
+   - 1.2 Asociados a aspectos generales
+- 2. Usabilidad
+- 3. Confiabilidad
+- 4. Rendimiento
+- 5. Soporte
+- 6. Restricciones de Diseño
+- 7. Documentación de Usuario y Sistema de Ayuda
+- 8. Componentes Adquiridos
+- 9. Interfases
+   - 9.1 Interfases de Usuarios
+   - 9.2 Interfases de Hardware
+   - 9.3 Interfases de Software
+   - 9.4 Interfases de Comunicaciones
+- 10. Licenciamiento
+- 11. Requerimientos Legales y de Derecho de Autor
+- 12. Estándares Aplicables
+
+
+Especificación de Requerimientos de Software Date: <dd/mmm/yy>
+<Identificador del documento>
+
+# Especificación de Requerimientos de Software
+
+```
+[Note: The SRS document captures the complete software requirements for the system, or a portion of the
+system. Following is a typical SRS outline for a project using only traditional, natural-language style
+requirements—with no use-case modeling. It captures all requirements in a single document, with applicable
+sections inserted from the Supplementary Specifications (which would no longer be needed). For a template of
+an SRS using use-case modeling, which consists of a package containing Use Cases of the use-case model and
+applicable Supplementary Specifications and other supporting information, see rup_srsuc.dot.]
+[Many different arrangements of an SRS are possible. Refer to [IEEE830-1998] for further elaboration of these
+explanations, as well as other options for SRS organization.]
+[This section of the SRS contains all software requirements to a level of detail sufficient to enable designers to
+design a system to satisfy those requirements, and testers to test that the system satisfies those requirements.
+When using use-case modeling, these requirements are captured in the Use Cases and the applicable
+supplementary specifications. If use-case modeling is not used, the outline for supplementary specifications
+may be inserted directly into this section, as shown below.]
+```
+## 1. Funcionalidad
+
+```
+[This section describes the functional requirements of the system for those requirements that are expressed in
+the natural language style. For many applications, this may constitute the bulk of the SRS package and thought
+should be given to the organization of this section. This section is typically organized by feature, but alternative
+organization methods may also be appropriate; for example, organization by user or organization by subsystem.
+Functional requirements may include feature sets, capabilities, and security.
+Where application development tools, such as requirements tools, modeling tools, and the like, are employed to
+capture the functionality, this section of the document would refer to the availability of that data, indicating the
+location and name of the tool used to capture the data.]
+```
+### 1.1 Asociados a los casos de uso
+
+```
+1.1.1 <Requerimiento Funcional 1>
+```
+### 1.2 Asociados a aspectos generales
+
+```
+1.2.1 <Requerimiento Funcional 1>
+```
+## 2. Usabilidad
+
+[This section includes all those requirements that affect usability. For example,
+_●_ specify the required training time for a normal users and a power user to become productive at particular
+operations
+_●_ specify measurable task times for typical tasks or base the new system’s usability requirements on other
+systems that the users know and like
+_●_ specify requirement to conform to common usability standards, such as IBM’s CUA standards Microsoft’s
+GUI standards]
+**2.1 <Requerimiento de Usabilidad 1>**
+
+## 3. Confiabilidad
+
+```
+[Requirements for reliability of the system should be specified here. Some suggestions follow:
+● Availability—specify the percentage of time available ( xx.xx%), hours of use, maintenance access, degraded
+mode operations, and so on.
+● Mean Time Between Failures (MTBF) — this is usually specified in hours, but it could also be specified in
+terms of days, months or years.
+```
+
+Especificación de Requerimientos de Software Date: <dd/mmm/yy>
+<Identificador del documento>
+_●_ Mean Time To Repair (MTTR)—how long is the system allowed to be out of operation after it has failed?
+_●_ Accuracy—specifies precision (resolution) and accuracy (by some known standard) that is required in the
+system’s output.
+_●_ Maximum Bugs or Defect Rate—usually expressed in terms of bugs per thousand lines of code (bugs/KLOC)
+or bugs per function-point( bugs/function-point).
+_●_ Bugs or Defect Rate—categorized in terms of minor, significant, and critical bugs: the requirement(s) must
+define what is meant by a “critical” bug; for example, complete loss of data or a complete inability to use
+certain parts of the system’s functionality.]
+**3.1 <Requerimiento de Confiabilidad 1>**
+
+## 4. Rendimiento
+
+[The system’s performance characteristics are outlined in this section. Include specific response times. Where
+applicable, reference related Use Cases by name.
+_●_ Response time for a transaction (average, maximum)
+_●_ Throughput, for example, transactions per second
+_●_ Capacity, for example, the number of customers or transactions the system can accommodate
+_●_ Degradation modes (what is the acceptable mode of operation when the system has been degraded in some
+manner)
+_●_ Resource utilization, such as memory, disk, communications, and so forth.
+**4.1 <Requerimiento de Rendimiento 1>**
+
+## 5. Soporte
+
+[This section indicates any requirements that will enhance the supportability or maintainability of the system
+being built, including coding standards, naming conventions, class libraries, maintenance access, and
+maintenance utilities.]
+**5.1 <Requerimiento de Soporte 1>**
+
+## 6. Restricciones de Diseño
+
+[This section indicates any design constraints on the system being built. Design constraints represent design
+decisions that have been mandated and must be adhered to. Examples include software languages, software
+process requirements, prescribed use of developmental tools, architectural and design constraints, purchased
+components, class libraries, and so on.]
+**6.1 <Restricción de Diseño 1>**
+
+## 7. Documentación de Usuario y Sistema de Ayuda
+
+[Describes the requirements, if any, for o-line user documentation, help systems, help about notices, and so
+forth.]
+**7.1 <Requerimiento de Documentación de Usuario y Sistema de Ayuda 1>**
+
+## 8. Componentes Adquiridos
+
+[This section describes any purchased components to be used with the system, any applicable licensing or usage
+restrictions, and any associated compatibility and interoperability or interface standards.]
+**8.1 <Requerimiento de Componentes Adquiridos 1>**
+
+## 9. Interfases
+
+```
+[This section defines the interfaces that must be supported by the application. It should contain adequate
+```
+
+Especificación de Requerimientos de Software Date: <dd/mmm/yy>
+<Identificador del documento>
+specificity, protocols, ports and logical addresses, and the like, so that the software can be developed and
+verified against the interface requirements.]
+
+### 9.1 Interfases de Usuarios
+
+```
+[Describe the user interfaces that are to be implemented by the software.]
+9.1.1 <Requerimiento de Interfase de Usuario 1>
+```
+### 9.2 Interfases de Hardware
+
+```
+[This section defines any hardware interfaces that are to be supported by the software, including logical
+structure, physical addresses, expected behavior, and so on.]
+9.2.1 <Requerimiento de Interfase de Hardware 1>
+```
+### 9.3 Interfases de Software
+
+```
+[This section describes software interfaces to other components of the software system. These may be purchased
+components, components reused from another application or components being developed for subsystems
+outside of the scope of this SRS but with which this software application must interact.]
+9.3.1 <Requerimiento de Interfase de Software 1>
+```
+### 9.4 Interfases de Comunicaciones
+
+```
+[Describe any communications interfaces to other systems or devices such as local area networks, remote serial
+devices, and so forth.]
+9.4.1 <Requerimiento de Interfase de Software 1>
+```
+## 10. Licenciamiento
+
+[Defines any licensing enforcement requirements or other usage restriction requirements that are to be exhibited
+by the software.]
+**10.1 <Requerimiento de Licenciamiento 1>**
+
+## 11. Requerimientos Legales y de Derecho de Autor
+
+[This section describes any necessary legal disclaimers, warranties, copyright notices, patent notices,
+wordmark, trademark, or logo compliance issues for the software.]
+**11.1 <Requerimiento Legal y de Derecho de Autor 1>**
+
+## 12. Estándares Aplicables
+
+[This section describes by reference any applicable standard and the specific sections of any such standards
+which apply to the system being described. For example, this could include legal, quality and regulatory
+standards, industry standards for usability, interoperability, internationalization, operating system compliance,
+and so forth.]
+**12.1 <Requerimiento de Estándares Aplicables 1>**
+
+Archivo "Sistema Especificacion de caso de uso":
+# <Nombre de la Compañía>
+
+# <Nombre del Proyecto>
+
+# Especificación del Caso de Uso del Sistema:
+
+# <Nombre del Caso de Uso del Sistema>
+
+## Versión <1.0>
+
+[Note: The following template is provided for use with the Rational Unified Process. Text enclosed in square
+brackets and displayed in blue italics (style=InfoBlue) is included to provide guidance to the author and should
+be deleted before publishing the document. A paragraph entered following this style will automatically be set to
+normal (style=Body Text).]
+[To customize automatic fields in Microsoft Word (which display a gray background when selected), select
+File>Properties and replace the Title, Subject and Company fields with the appropriate information for this
+document. After closing the dialog, automatic fields may be updated throughout the document by selecting
+Edit>Select All (or Ctrl-A) and pressing F9, or simply click on the field and press F9. This must be done
+separately for Headers and Footers. Alt-F9 will toggle between displaying the field names and the field
+contents. See Word help for more information on working with fields.]
+[Note: If you are not using Rational RequisitePro, then this document template should be used to capture the
+actual Business Use Case including the workflow, special requirements, and performance goals of the Business
+Use Case. This file should be linked to the corresponding business use case in the Rational Rose model.
+If you use Rational SoDA, then this document is used as input to the business use-case report that combines this
+content with use-case diagrams from Rose.]
+
+
+Especificación del Caso de Uso del Sistema: <Nombre del Caso de Uso del Sistema> Fecha: <dd/mmm/yy>
+<identificador del documento>
+
+# Historial de Versiones
+
+**Fecha Versión Descripción Autor**
+<dd/mmm/yy> <x.x> <detalles> <nombre>
+
+
+## Especificación del Caso de Uso del Sistema: <Nombre del Caso de Uso del Sistema> Fecha: <dd/mmm/yy>
+
+<identificador del documento>
+
+- 1. Actores del Sistema Tabla de Contenidos
+   - 1.1 <Actor Sistema 1>
+   - 1.2 <Actor Sistema 2>
+- 2. Propósito
+- 3. Breve Descripción
+- 4. Flujo de Eventos
+   - 4.1 Flujo Básico
+   - 4.2 Subflujos
+   - 4.3 Flujos Alternos
+- 5. Precondiciones
+   - 5.1 <Precondición 1>
+   - 5.2 <Precondición 2>
+- 6. Poscondiciones
+   - 6.1 <Poscondición 1>
+   - 6.2 <Poscondición 2>
+- 7. Puntos de Extensión
+   - 7.1 <Punto de extensión 1>
+   - 7.2 <Punto de extensión 2>
+- 8. Requerimientos Especiales
+- 9. Información Adicional
+
+
+Especificación del Caso de Uso del Sistema: <Nombre del Caso de Uso del Sistema> Fecha: <dd/mmm/yy>
+<identificador del documento>
+
+# Especificación del Caso de Uso del Sistema:
+
+# <Nombre del Caso de Uso del Sistema>
+
+## 1. Actores del Sistema Tabla de Contenidos
+
+```
+[Indicar los actores del sistema que participan en el caso de uso del sistema.]
+```
+### 1.1 <Actor Sistema 1>
+
+### 1.2 <Actor Sistema 2>
+
+## 2. Propósito
+
+```
+[Describir el objetivo principal del caso de uso del sistema.]
+```
+## 3. Breve Descripción
+
+```
+[Describir un resumen de las principales actividades que se realizan dentro del caso de uso del sistema. Incluir
+el punto de inicio y el punto de terminación del caso de uso del sistema. Es suficiente con un párrafo.]
+```
+## 4. Flujo de Eventos
+
+```
+[Descripción textual del flujo de actividades del caso de uso del sistema El flujo de eventos describe qué hace el
+sistema para obtener el resultado de valor y de interés para los actores del sistema y no cómo el sistema
+resolverá el problema.]
+```
+### 4.1 Flujo Básico
+
+[Describir los pasos del curso básico incluyendo qué hace el (los) actor (es) y cuál es la respuesta del sistema,
+más no cómo ni por qué. Es un diálogo entre ambas partes.[El caso de uso comienza cuando el actor del
+sistema interactúa con el sistema. Un actor del sistema siempre inicia un caso de uso del sistema. Si alguna
+información es intercambiada se debe ser especificada.]
+4.1.1 <Paso 1>
+4.1.2 <Paso 2>
+
+### 4.2 Subflujos
+
+[Se describen los subflujos que se deriven del flujo básico. Constituyen pequeñas actividades paralelas o
+independientes que pueden ejecutare dentro del flujo básico.]
+4.2.1 <Subflujo 1>
+[Describir los pasos del subflujo 1]
+4.2.2 <Subflujo 2>
+[Describir los pasos del subflujo 2]
+
+### 4.3 Flujos Alternos
+
+[Se describen las alternativas que se deriven del flujo básico. Una alternativa representa un comportamiento
+alternativo que ocurre usualmente debido a una error en el flujo básico Comienza cada flujo alternativo con
+una línea que establezca claramente en qué lugar del flujo básico ocurre y bajo qué condicione.
+4.3.1 <Nombre del flujo alterno 1>
+[Breve descripción de los pasos alternos.]
+4.3.2 <Nombre del flujo alterno 2>
+[Breve descripción de los pasos alternos.]
+
+
+Especificación del Caso de Uso del Sistema: <Nombre del Caso de Uso del Sistema> Fecha: <dd/mmm/yy>
+<identificador del documento>
+
+## 5. Precondiciones
+
+```
+[Especificar las condiciones del caso de uso del sistema que deben ser ciertas antes de ejecutar el caso de uso
+del sistema]
+```
+### 5.1 <Precondición 1>
+
+```
+[Describir la precondición 1]
+```
+### 5.2 <Precondición 2>
+
+```
+[Describir la precondición 2]
+```
+## 6. Poscondiciones
+
+```
+[Especificar las condiciones del caso de uso del sistema que deben ser ciertas después de ejecutar el caso de
+uso del sistema]
+```
+### 6.1 <Poscondición 1>
+
+```
+[Describir la poscondición 1]
+```
+### 6.2 <Poscondición 2>
+
+```
+[Describir la poscondición 2]
+```
+## 7. Puntos de Extensión
+
+```
+[Puntos de extensión del caso de uso del sistema.]
+```
+### 7.1 <Punto de extensión 1>
+
+```
+[Describir el punto de extensión incluyendo la definición del momento del flujo de eventos en que ocurre.]
+```
+### 7.2 <Punto de extensión 2>
+
+```
+[Describir el punto de extensión incluyendo la definición del momento del flujo de eventos en que ocurre.]
+```
+## 8. Requerimientos Especiales
+
+```
+[Requerimientos especiales (no funcionales) que afectan de manera especial la forma como los casos de uso se
+ejecutan]
+```
+## 9. Información Adicional
+
+```
+[Cualquier información textual o gráfica que contribuya a la comprensión del caso de uso]
+```

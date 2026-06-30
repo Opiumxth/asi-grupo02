@@ -8,7 +8,7 @@
 
 ---
 
-**Historial de Revisiones**
+# Historial de Versiones
 
 | Fecha | Versión | Descripción | Autor |
 |---|---|---|---|
@@ -18,7 +18,7 @@
 
 ---
 
-## Tabla de Contenidos
+# Tabla de Contenidos
 
 ## CUS-01. Crear Pedido
 ## CUS-02. Confirmar Pedido

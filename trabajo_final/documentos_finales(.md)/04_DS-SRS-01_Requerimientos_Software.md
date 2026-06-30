@@ -8,7 +8,7 @@
 
 ---
 
-**Historial de Versiones**
+# Historial de Versiones
 
 | Fecha | Versión | Descripción | Autor |
 |---|---|---|---|
@@ -18,7 +18,7 @@
 
 ---
 
-## Tabla de Contenidos
+# Tabla de Contenidos
 
 - 1. Funcionalidad
   - 1.1 Asociados a los casos de uso

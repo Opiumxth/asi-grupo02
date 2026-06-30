@@ -8,7 +8,7 @@
 
 ---
 
-**Historial de Revisiones**
+# Historial de Revisiones
 
 | Fecha | Versión | Descripción | Autor |
 |---|---|---|---|
@@ -18,7 +18,7 @@
 
 ---
 
-## Tabla de Contenidos
+# Tabla de Contenidos
 
 ## RN-01. Un pedido solo puede ser creado por un Cliente autenticado
 ## RN-02. El estado de un pedido sigue una secuencia estricta y unidireccional
@@ -41,15 +41,15 @@
 
 ---
 
-## Reglas del Negocio
+# Reglas del Negocio
 
-### RN-01. Un pedido solo puede ser creado por un Cliente autenticado
+## RN-01. Un pedido solo puede ser creado por un Cliente autenticado
 
 Un pedido solo puede iniciarse cuando existe un Cliente registrado y autenticado en el sistema. El pedido debe incluir al menos un ítem, una dirección de entrega válida con coordenadas geográficas, un método de pago y la referencia a una tienda afiliada activa. Al crearse, el pedido entra automáticamente en estado PENDING.
 
 ---
 
-### RN-02. El estado de un pedido sigue una secuencia estricta y unidireccional
+## RN-02. El estado de un pedido sigue una secuencia estricta y unidireccional
 
 Los estados de un pedido siguen la secuencia:
 
@@ -64,13 +64,13 @@ El único estado terminal alternativo es CANCELLED, al que puede llegar desde PE
 
 ---
 
-### RN-03. Solo la Tienda / Dispatcher puede confirmar o rechazar un pedido PENDING
+## RN-03. Solo la Tienda / Dispatcher puede confirmar o rechazar un pedido PENDING
 
 La transición de PENDING a CONFIRMED es responsabilidad exclusiva de la Tienda / Dispatcher asignada al pedido. Al confirmar, la Tienda / Dispatcher debe indicar la sucursal de despacho (`storeLocationId`) y el tiempo estimado de preparación en minutos (`estimatedPrepTime`). Si la Tienda / Dispatcher rechaza el pedido, este pasa directamente a CANCELLED con tipo de cancelación STORE\_FAULT\_BEFORE\_DRIVER\_PAID.
 
 ---
 
-### RN-04. La cancelación por el Cliente y el rechazo por la Tienda son acciones distintas que producen el mismo estado terminal
+## RN-04. La cancelación por el Cliente y el rechazo por la Tienda son acciones distintas que producen el mismo estado terminal
 
 Sobre un pedido en estado PENDING pueden ocurrir dos acciones diferentes que ambas producen CANCELLED, pero con actores y tipos distintos:
 
@@ -81,7 +81,7 @@ Una vez que el pedido ha avanzado más allá de PENDING (estado CONFIRMED o post
 
 ---
 
-### RN-05. La cancelación lleva un tipo que determina su tratamiento financiero
+## RN-05. La cancelación lleva un tipo que determina su tratamiento financiero
 
 Toda cancelación debe registrar un tipo (`cancellation_type`) que define las consecuencias financieras:
 
@@ -94,13 +94,13 @@ Toda cancelación debe registrar un tipo (`cancellation_type`) que define las co
 
 ---
 
-### RN-06. Un Repartidor solo puede recibir pedidos si está online y no ha alcanzado su límite de órdenes simultáneas
+## RN-06. Un Repartidor solo puede recibir pedidos si está online y no ha alcanzado su límite de órdenes simultáneas
 
 El Sistema de Asignación (modo AUTO\_PROXIMITY) o el Administrador (modo ADMIN\_MANUAL) solo pueden asignar un pedido a un Repartidor que cumpla simultáneamente las siguientes condiciones: está online (`is_online = true`), no ha alcanzado su límite de pedidos simultáneos según rango (número de pedidos activos menor que `max_concurrent_orders`), y su región geográfica registrada coincide con la del pedido.
 
 ---
 
-### RN-07. El límite de pedidos simultáneos de un Repartidor está determinado por su rango
+## RN-07. El límite de pedidos simultáneos de un Repartidor está determinado por su rango
 
 El número máximo de órdenes que un Repartidor puede llevar al mismo tiempo (`max_concurrent_orders`) está vinculado a su rango (`rank`) según la siguiente tabla:
 
@@ -114,24 +114,24 @@ El número máximo de órdenes que un Repartidor puede llevar al mismo tiempo (`
 
 ---
 
-### RN-08. El modo de asignación de repartidores es un parámetro global configurable
+## RN-08. El modo de asignación de repartidores es un parámetro global configurable
 
 El sistema opera en uno de dos modos de asignación, almacenado en la entidad `Setting` (singleton global):
 
 - **AUTO\_PROXIMITY:** el Sistema de Asignación selecciona y asigna automáticamente al candidato más adecuado disponible en la región del pedido.
-- **ADMIN\_MANUAL:** el Administrador asigna manualmente al Repartidor mediante la acción `assign-driver`. **Supuesto a confirmar:** la documentación fuente no especifica si en modo ADMIN\_MANUAL el pedido transita igualmente por WAITING\_DRIVER → DRIVER\_ASSIGNED → ACCEPTED, o si el Administrador puede saltar directamente a un estado posterior al asignar. Se asume que los estados intermedios se respetan de la misma forma que en AUTO\_PROXIMITY; confirmar con el equipo técnico antes de especificar los casos de uso de asignación manual.
+- **ADMIN\_MANUAL:** el Administrador asigna manualmente al Repartidor mediante la acción `assign-driver`. **Supuesto a confirmar:** la documentación fuente no especifica si en modo ADMIN\_MANUAL el pedido transita igualmente por WAITING\_DRIVER → DRIVER\_ASSIGNED → ACCEPTED, o si el Administrador puede saltar directamente a un estado posterior al asignar. Se asume que los estados intermedios se respetan de la misma forma que en AUTO\_PROXIMITY; "confirmar con el equipo técnico antes de especificar los casos de uso de asignación manual".
 
 Solo puede estar activo un modo a la vez. El Administrador puede cambiar el modo activo desde el panel web de administración.
 
 ---
 
-### RN-09. La tarifa de envío se calcula en el momento de creación del pedido y queda fija
+## RN-09. La tarifa de envío se calcula en el momento de creación del pedido y queda fija
 
 El cálculo de la tarifa de envío se ejecuta al recibir la solicitud de creación del pedido (`POST /orders`). El valor resultante queda almacenado en el campo `delivery_fee` del pedido y no se recalcula en estados posteriores, independientemente de cambios en las reglas de tarifa o en la configuración global.
 
 ---
 
-### RN-10. El modo de cálculo de tarifa activo (ZONE o DISTANCE) es global y configurable
+## RN-10. El modo de cálculo de tarifa activo (ZONE o DISTANCE) es global y configurable
 
 El sistema soporta dos modos de cálculo de tarifa de envío, controlados por el campo `fee_mode` de la entidad `Setting`:
 
@@ -142,7 +142,7 @@ El modo activo aplica a todos los pedidos nuevos del sistema.
 
 ---
 
-### RN-11. En modo ZONE, la tarifa base se determina por la zona geográfica del punto de entrega
+## RN-11. En modo ZONE, la tarifa base se determina por la zona geográfica del punto de entrega
 
 Cuando `fee_mode = 'zone'`, el sistema evalúa las zonas de entrega activas (`delivery_zones`) y determina si el punto de entrega cae dentro del polígono de alguna zona. La tarifa se calcula así:
 
@@ -155,7 +155,7 @@ Si el punto de entrega no pertenece a ninguna zona configurada, se aplica un fal
 
 ---
 
-### RN-12. En modo DISTANCE, la tarifa se calcula linealmente por kilómetro
+## RN-12. En modo DISTANCE, la tarifa se calcula linealmente por kilómetro
 
 Cuando `fee_mode = 'distance'`, la tarifa se obtiene multiplicando la distancia en kilómetros por el precio por kilómetro configurado en `Setting`, y luego aplicando un mínimo y un máximo también configurados:
 
@@ -166,7 +166,7 @@ tarifa = máx(tarifa_mínima, mín(tarifa, tarifa_máxima))
 
 ---
 
-### RN-13. Las reglas de tarifa de envío se aplican en orden de prioridad sobre la tarifa base
+## RN-13. Las reglas de tarifa de envío se aplican en orden de prioridad sobre la tarifa base
 
 Tras calcular la tarifa base (por zona o por distancia), el sistema aplica las reglas de tarifa activas (`delivery_fee_rules`) en orden ascendente de prioridad (`priority ASC`). Cada regla puede modificar la tarifa según su tipo:
 
@@ -182,7 +182,7 @@ Una regla puede restringirse a una ciudad, a días de la semana específicos y a
 
 ---
 
-### RN-14. La tarifa final se multiplica por el factor de la tienda y se redondea al medio sol superior
+## RN-14. La tarifa final se multiplica por el factor de la tienda y se redondea al medio sol superior
 
 Después de aplicar todas las reglas de tarifa, se aplica el multiplicador propio de la tienda (`store.fee_multiplier`). El valor resultante se redondea al medio sol más cercano hacia arriba:
 
@@ -194,7 +194,7 @@ Ejemplo: S/ 7.30 → S/ 7.50.
 
 ---
 
-### RN-15. La comisión de plataforma sobre la tienda depende del tipo de tienda
+## RN-15. La comisión de plataforma sobre la tienda depende del tipo de tienda
 
 Al entregar un pedido (transición a DELIVERED), el sistema calcula y registra la comisión de plataforma según el tipo de tienda (`store_type`):
 
@@ -206,7 +206,7 @@ Al entregar un pedido (transición a DELIVERED), el sistema calcula y registra l
 
 ---
 
-### RN-16. La tasa de comisión del Repartidor se resuelve por jerarquía de configuración
+## RN-16. La tasa de comisión del Repartidor se resuelve por jerarquía de configuración
 
 La tasa porcentual de comisión aplicada a un Repartidor en un pedido se determina siguiendo esta jerarquía (de mayor a menor especificidad):
 
@@ -217,7 +217,7 @@ La tasa porcentual de comisión aplicada a un Repartidor en un pedido se determi
 
 ---
 
-### RN-17. La comisión del Repartidor se calcula sobre la tarifa de envío del pedido entregado
+## RN-17. La comisión del Repartidor se calcula sobre la tarifa de envío del pedido entregado
 
 La comisión que el Repartidor paga a la plataforma se calcula como un porcentaje de la tarifa de envío (`delivery_fee`) del pedido, usando la tasa resuelta según RN-16:
 
@@ -229,6 +229,6 @@ Esta comisión se registra en el ledger financiero en el momento en que el pedid
 
 ---
 
-### RN-18. Los precios de los ítems se registran como snapshot inmutable al momento de crear el pedido
+## RN-18. Los precios de los ítems se registran como snapshot inmutable al momento de crear el pedido
 
 Al crear un pedido, el sistema guarda en `order_items` el nombre del producto (`product_name`), el precio unitario (`unit_price`), el subtotal, y los datos de variante (`variant_label`, `variant_price`) vigentes en ese momento. Este snapshot es inmutable: modificaciones posteriores al catálogo de la tienda no afectan el valor registrado en pedidos ya creados.
